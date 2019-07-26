@@ -104,22 +104,8 @@ add_action( 'after_setup_theme', 'myco_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-
-
-
-
 require  get_template_directory() . '/functions/including-style.php';
 require  get_template_directory() . '/functions/asf-options.php' ;
-
-
-
-// require  get_template_directory() . '/functions/custom-thamb.php' ;
-// require  get_template_directory() . '/functions/custom-type.php' ;
-// require  get_template_directory() . '/functions/function-pagination.php' ;
-// require  get_template_directory() . '/functions/including-widget.php' ;
-// require  get_template_directory() . '/functions/function-breadcrumbs.php' ;
-// require  get_template_directory() . '/functions/function-comments.php' ;
-
 
 function myco_widgets_init() {
 	register_sidebar( array(
@@ -138,8 +124,6 @@ add_action( 'widgets_init', 'myco_widgets_init' );
  * Enqueue scripts and styles.
  */
 
-
-
 /**
  * Тестирование :
 <!--  			<?php
@@ -150,17 +134,6 @@ $logotip_site = get_field('vimeo_picture_fon');
 function myco_debug($data) {
 	echo '<pre>' . print_r ($data, 1) . '</pre>';
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /**
  * Implement the Custom Header feature.

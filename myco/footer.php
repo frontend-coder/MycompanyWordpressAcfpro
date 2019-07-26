@@ -14,11 +14,13 @@
 
 <footer>
   <ul class="footer_list">
-    <li> <a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-    <li> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-    <li> <a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-    <li><a href="#" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-    <li> <a href="#" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a> </li>
+        <?php while( has_sub_field('footer_socialweb', 'option') ):
+          $footer_socialweb_icon = get_sub_field('footer_socialweb_icon', 'option');
+          $footer_socialweb_link = get_sub_field('footer_socialweb_link', 'option');
+          ?>
+    <li> <a href="<?php echo esc_url($footer_socialweb_link); ?>" target="_blank"><i class="fa <?php echo esc_html($footer_socialweb_icon); ?>" aria-hidden="true"></i></a> </li>
+
+ <?php endwhile; ?>
   </ul>
 </footer>
 

@@ -53,18 +53,15 @@ get_header();
 
 <section class="block our_team_fon" id="our_team">
   <div class="container">
-
     <?php
     $comand_title = get_field('comand_title', 'option');
     if($comand_title) :
       ?>
-
       <h2 class="block_title"><?php echo esc_html($comand_title); ?></h2>
     <?php endif; ?>
 
     <div class="row">
       <div class="our_team_wrap">
-
         <?php while( has_sub_field('comand_list', 'option') ):
           $comand_list_picture = get_sub_field('comand_list_picture', 'option');
           $comand_list_name = get_sub_field('comand_list_name', 'option');
@@ -85,7 +82,6 @@ get_header();
   </div>
 </div>
 </section>
-
 
 <section class="block" id="service">
   <div class="container">
@@ -111,7 +107,6 @@ get_header();
       $our_service_list_picture = get_sub_field('our_service_list_picture', 'option');
       $our_service_list_name = get_sub_field('our_service_list_name', 'option');
       $our_service_list_descr = get_sub_field('our_service_list_descr', 'option');
-
           ?>
         <div class="our_team_items our_service_items">
           <div class="our_service_foto">
@@ -122,7 +117,6 @@ get_header();
           </div>
         </div>
       <?php endwhile; ?>
-
       </div>
     </div>
   </div>
@@ -141,8 +135,6 @@ get_header();
       </div>
   <?php endwhile; ?>
 
-
-
     </div>
   </div>
 </div>
@@ -156,93 +148,40 @@ get_header();
     </div>
     <div class="row">
       <div class="our_portfolio_wrap" id="our_portfolio_wrap">
-
-        <a  href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" alt="первый фото к портфолио">
+        <?php while( has_sub_field('portfolio_block', 'option') ):
+          $portfolio_block_item = get_sub_field('portfolio_block_item', 'option');
+          ?>
+       <a href="<?php echo esc_url($portfolio_block_item[url]); ?>" class="our_portfolio_items">
+         <img src="<?php echo esc_url($portfolio_block_item[url]); ?>" alt="<?php echo esc_html($comand_list_picture[alt]); ?>">
        </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-1.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" alt="первый фото к портфолио">
-       </a>
-
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-2.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" alt="первый фото к портфолио">
-       </a>
-
-       <a href="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" class="our_portfolio_items">
-         <img src="<?php bloginfo('template_url'); ?>/assets/img/portfolio/portfolio-3.jpg" alt="первый фото к портфолио">
-       </a>
-
-
+ <?php endwhile; ?>
      </div>
    </div>
  </div>
 </section>
 
-
 <section class="block our_team_fon" id="adwice">
   <div class="container">
    <h2 class="block_title">отзывы наших клиентов</h2>
    <div class="row">
-
-
     <div id="adwise_carousel" class="owl-carousel owl-theme">
-      <div class="item">
-        <div class="inner-testimonial">
 
-          <div class="adwice_text">Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва.</div>
-          <h3 class="adwice_name">Григорий Бон <span>CEO Моска Паблик лимитед</span></h3>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="inner-testimonial">
-
-          <div class="adwice_text">Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва.</div>
-          <h3 class="adwice_name">Григорий Бон <span>CEO Моска Паблик лимитед</span></h3>
-        </div>
-      </div>
+  <?php while( has_sub_field('adwice_list', 'option') ):
+          $adwice_list_text = get_sub_field('adwice_list_text', 'option');
+          $adwice_list_name = get_sub_field('adwice_list_name', 'option');
+          $adwice_list_position = get_sub_field('adwice_list_position', 'option');
+          ?>
 
       <div class="item">
         <div class="inner-testimonial">
 
-          <div class="adwice_text">Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Григорий, Москва Григорий, Москва Григорий, Москва Григорий, МоскваГригорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва Григорий, Москва.</div>
-          <h3 class="adwice_name">Григорий Бон <span>CEO Моска Паблик лимитед</span></h3>
+          <div class="adwice_text"><?php echo esc_html($adwice_list_text); ?></div>
+          <h3 class="adwice_name"><?php echo esc_html($adwice_list_name); ?>
+           <span><?php echo esc_html($adwice_list_position); ?></span></h3>
         </div>
       </div>
+
+ <?php endwhile; ?>
     </div>
 
   </div>
@@ -251,12 +190,24 @@ get_header();
 
 <section class="block" id="contacts">
   <div class="container">
-    <h2 class="block_title">Напишите нам</h2>
+<?php
+      $contacts_title = get_field('contacts_title', 'option');
+     if($contacts_title) :
+?>
+    <h2 class="block_title"><?php echo esc_html($contacts_title); ?></h2>
+<?php endif; ?>
+<?php
+      $contacts_discr = get_field('contacts_discr', 'option');
+     if($contacts_discr) :
+?>
     <div class="block_descr">
-      Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Жаренные по всей ее, она даль текста предупреждал всеми страну! Дороге взгляд там приставка щеке продолжил наш коварный деревни если она над моей мир правилами вопроса рукопись, необходимыми строчка злых назад силуэт диких грустный журчит они грамматики заглавных?
+      <?php echo esc_html($contacts_discr); ?>
     </div>
+<?php endif; ?>
     <div class="row">
-      <form class="forms-call">
+ <? echo do_shortcode( '[contact-form-7 id="87" title="Контактная форма"]');  ?>
+
+ <!--      <form class="forms-call">
         <div class="forms-call_items">
           <label for="id_name"> Имя <span>*</span></label>
           <input id="id_name" type="text" name="name" value="">
@@ -265,18 +216,14 @@ get_header();
           <label for="id_email"> E-mail <span>*</span></label>
           <input id="id_email" type="email" name="email" value="">
         </div>
-
         <div class="forms-call_items">
           <label> Сообщение <span>*</span></label>
           <textarea id="id_message" name="messagesite"></textarea>
         </div>
-
         <div class="forms-call_buttons">
           <button class="call_buttons" > Сообщение </button>
-
         </div>
-
-      </form>
+      </form> -->
     </div>
   </div>
 </section>
