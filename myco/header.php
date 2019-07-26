@@ -88,9 +88,20 @@
 						<?php endif; ?>
 					</div>
 
+<?php
+			wp_nav_menu( array(
+				// [ 'items_wrap' => '%3$s' ],
+				//  [ 'container' => '' ],
+				'container' => 'div',
+				'container_id' => '',
+				'container_class' => 'top_line_menu',
+				'theme_location' => 'menu-1',
+				'menu_id'        => '',
+				'menu_class'          =>  '',
+			) );
+			?>
 
-
-					<div class="top_line_menu">
+		<!-- 			<div class="top_line_menu">
 						<ul>
 							<li><a href="#mainblock">главная</a></li>
 							<li><a href="#aboutus">о нас</a></li>
@@ -99,7 +110,7 @@
 							<li><a href="#adwice">Отзывы</a></li>
 							<li><a href="#contacts">контакты</a></li>
 						</ul>
-					</div>
+					</div> -->
 
 					<div class="mobile_gamburger">
 						<a href="#" class="toggle-mnu">
@@ -110,6 +121,21 @@
 			</div>
 		</div>
 		<!--start hidden-mnu -->
+
+
+<?php
+			wp_nav_menu( array(
+				// [ 'items_wrap' => '%3$s' ],
+				//  [ 'container' => '' ],
+				'container' => 'div',
+				'container_id' => '',
+				'container_class' => 'top-menu hidden-mnu',
+				'theme_location' => 'menu-1',
+				'menu_id'        => '',
+				'menu_class'          =>  '',
+			) );
+			?>
+		<!--
 		<div class="top-menu hidden-mnu">
 			<ul>
 				<li><a href="#mainblock">главная</a></li>
@@ -119,6 +145,6 @@
 				<li><a href="#adwice">Отзывы</a></li>
 				<li><a href="#contacts">контакты</a></li>
 			</ul>
-		</div>
+		</div> -->
 		<!--end hidden-mnu -->
 	</div>
