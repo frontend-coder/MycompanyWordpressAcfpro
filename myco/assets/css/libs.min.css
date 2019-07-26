@@ -49,7 +49,16 @@ body {
  * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system,
+ BlinkMacSystemFont,
+ 'Segoe UI',
+ Roboto,
+ Helvetica,
+ Arial,
+ sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+ 'Segoe UI Symbol';
 }
 
 /* Grouping content
@@ -4096,7 +4105,16 @@ body {
  * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system,
+ BlinkMacSystemFont,
+ 'Segoe UI',
+ Roboto,
+ Helvetica,
+ Arial,
+ sans-serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+ 'Segoe UI Symbol';
 }
 
 /* Grouping content
@@ -8212,7 +8230,12 @@ body input:required:valid, body textarea:required:valid {
 }
 
 .header_img {
-  background: #000 url("../img/header-fon.jpg") center center no-repeat;
+background-position: center center;
+background-repeat: no-repeat;
+/* background-image: url("../img/header-fon.jpg"); */
+/* background: #000 url("../img/header-fon.jpg") center center no-repeat;
+ */
+
   min-height: 770px;
   background-size: cover;
   position: relative;

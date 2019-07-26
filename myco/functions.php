@@ -109,23 +109,16 @@ add_action( 'after_setup_theme', 'myco_content_width', 0 );
 
 
 require  get_template_directory() . '/functions/including-style.php';
+require  get_template_directory() . '/functions/asf-options.php' ;
 
 
 
 // require  get_template_directory() . '/functions/custom-thamb.php' ;
-// require  get_template_directory() . '/functions/asf-options.php' ;
 // require  get_template_directory() . '/functions/custom-type.php' ;
 // require  get_template_directory() . '/functions/function-pagination.php' ;
 // require  get_template_directory() . '/functions/including-widget.php' ;
 // require  get_template_directory() . '/functions/function-breadcrumbs.php' ;
 // require  get_template_directory() . '/functions/function-comments.php' ;
-
-
-
-
-
-
-
 
 
 function myco_widgets_init() {
@@ -147,7 +140,16 @@ add_action( 'widgets_init', 'myco_widgets_init' );
 
 
 
-
+/**
+ * Тестирование :
+<!--  			<?php
+$logotip_site = get_field('vimeo_picture_fon');
+				 myco_debug($logotip_site);
+				 ?> -->
+ */
+function myco_debug($data) {
+	echo '<pre>' . print_r ($data, 1) . '</pre>';
+}
 
 
 
