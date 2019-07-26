@@ -11,26 +11,23 @@
 
 ?>
 
-	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'myco' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'myco' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'myco' ), 'myco', '<a href="https://www.facebook.com/frontendercode">Oleg Vasilenko</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer>
+  <ul class="footer_list">
+    <li> <a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+    <li> <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+    <li> <a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+    <li><a href="#" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+    <li> <a href="#" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a> </li>
+  </ul>
+</footer>
 
 <?php wp_footer(); ?>
-
+<!--
+<script src="js/scripts.min.js"></script> -->
+<!-- Yandex.Metrika counter -->
+<!-- /Yandex.Metrika counter -->
+<!-- Google Analytics counter -->
+<!-- /Google Analytics counter -->
 </body>
 </html>
