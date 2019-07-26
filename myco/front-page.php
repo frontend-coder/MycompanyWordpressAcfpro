@@ -12,73 +12,75 @@ get_header();
     <div class="row">
       <div class="about_us_wrap">
         <div class="about_us_items">
-          <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/computer-fon.png" alt="компьютер с макетом на экране">
-
+          <?php
+          $us_fon = get_field('us_fon', 'option');
+          if($us_fon) :
+            ?>
+            <img class="img-responsive" src="<?php echo esc_url($us_fon[url]); ?>" alt="<?php echo esc_html($us_fon[alt]); ?>">
+          <?php endif; ?>
         </div>
         <div class="about_us_items">
           <div class="about_us_title_wrap">
-            <h2 class="about_us_title">Несколько слов о нас
+            <?php $us_title = get_field('us_title', 'option');
+            if($us_title) :
+              ?>
+
+              <h2 class="about_us_title"><?php echo esc_html($us_title); ?>
               <span class="about_us_title_line"></span>
             </h2>
-          </div>
+          <?php endif; ?>
 
-          <div class="about_us_descr">
-            Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Заголовок осталось подпоясал речью точках составитель журчит рукописи рекламных свою то!
-          </div>
-          <ul class="about_us_lists">
-            <li> <span>Мссия</span> мы просзводим качественно и быстро</li>
-            <li> <span>Опыт</span> быстрая доставка с замечательным результатом</li>
-            <li> <span>Клиенты</span> благодарны нам за работу</li>
-          </ul>
         </div>
+        <?php $us_descr = get_field('us_descr', 'option');
+        if($us_descr) :
+          ?>
+          <div class="about_us_descr">
+            <?php echo esc_html($us_descr); ?>
+          </div>
+        <?php endif; ?>
+        <?php while( has_sub_field('us_listdost', 'option') ):
+          $us_listdost_list = get_sub_field('us_listdost_list', 'option');
+          ?>
+          <ul class="about_us_lists">
+            <li> <?php echo $us_listdost_list; ?></li>
+          </ul>
+        <?php endwhile; ?>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <section class="block our_team_fon" id="our_team">
   <div class="container">
-   <h2 class="block_title">наша команда</h2>
-   <div class="row">
-    <div class="our_team_wrap">
 
-      <div class="our_team_items">
-        <div class="our_team_foto">
-          <img src="<?php bloginfo('template_url'); ?>/assets/img/person.jpg" alt="фотография персоны">
-        </div>
-        <div class="our_team_title">Влад Иванов</div>
-        <div class="our_team_pozition">Дизайнер</div>
-        <div class="our_team_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-        </div>
-      </div>
+    <?php
+    $comand_title = get_field('comand_title', 'option');
+    if($comand_title) :
+      ?>
 
-      <div class="our_team_items">
-        <div class="our_team_foto">
-          <img src="<?php bloginfo('template_url'); ?>/assets/img/person.jpg" alt="фотография персоны">
+      <h2 class="block_title"><?php echo esc_html($comand_title); ?></h2>
+    <?php endif; ?>
+
+    <div class="row">
+      <div class="our_team_wrap">
+
+        <?php while( has_sub_field('comand_list', 'option') ):
+          $comand_list_picture = get_sub_field('comand_list_picture', 'option');
+          $comand_list_name = get_sub_field('comand_list_name', 'option');
+          $comand_list_position = get_sub_field('comand_list_position', 'option');
+          $comand_list_descr = get_sub_field('comand_list_descr', 'option');
+          ?>
+          <div class="our_team_items">
+            <div class="our_team_foto">
+              <img src="<?php echo esc_url($comand_list_picture[url]); ?>" alt="<?php echo esc_html($comand_list_picture[alt]); ?>">
+            </div>
+            <div class="our_team_title"><?php echo esc_html($comand_list_name); ?></div>
+            <div class="our_team_pozition"><?php echo esc_html($comand_list_position); ?></div>
+            <div class="our_team_deskr"> <?php echo esc_html($comand_list_descr); ?>
+          </div>
         </div>
-        <div class="our_team_title">Багдан Петрушев</div>
-        <div class="our_team_pozition">Менеджер</div>
-        <div class="our_team_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-        </div>
-      </div>
-      <div class="our_team_items">
-        <div class="our_team_foto">
-          <img src="<?php bloginfo('template_url'); ?>/assets/img/person.jpg" alt="фотография персоны">
-        </div>
-        <div class="our_team_title">Павел Крикунов</div>
-        <div class="our_team_pozition">Копирайтер</div>
-        <div class="our_team_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-        </div>
-      </div>
-      <div class="our_team_items">
-        <div class="our_team_foto">
-          <img src="<?php bloginfo('template_url'); ?>/assets/img/person.jpg" alt="фотография персоны">
-        </div>
-        <div class="our_team_title">Максим Плеханов</div>
-        <div class="our_team_pozition">SEO</div>
-        <div class="our_team_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-        </div>
-      </div>
+      <?php endwhile; ?>
     </div>
   </div>
 </div>
