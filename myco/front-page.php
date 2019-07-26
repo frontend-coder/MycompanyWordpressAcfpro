@@ -89,48 +89,39 @@ get_header();
 
 <section class="block" id="service">
   <div class="container">
-    <h2 class="block_title">наши услуги</h2>
+    <?php
+            $our_service_title = get_field('our_service_title', 'option');
+            if($our_service_title) :
+              ?>
+    <h2 class="block_title"><?php echo esc_html($our_service_title); ?></h2>
+<?php endif; ?>
+   <?php
+            $our_service_descr = get_field('our_service_descr', 'option');
+            if($our_service_descr) :
+              ?>
     <div class="block_descr">
-      Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Жаренные по всей ее, она даль текста предупреждал всеми страну! Дороге взгляд там приставка щеке продолжил наш коварный деревни если она над моей мир правилами вопроса рукопись, необходимыми строчка злых назад силуэт диких грустный журчит они грамматики заглавных? Вскоре она эта, свой заглавных точках парадигматическая толку, вопроса, рекламных коварный взобравшись диких.
+      <?php echo esc_html($our_service_descr); ?>
     </div>
+    <?php endif; ?>
+
     <div class="row">
       <div class="our_team_wrap">
 
-        <div class="our_team_items our_service_items">
-          <div class="our_service_foto">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/icon1-monitor.png" alt="монитор">
-          </div>
-          <div class="our_service_title">Веб-дизайн</div>
-          <div class="our_service_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-          </div>
-        </div>
+  <?php while( has_sub_field('our_service_list', 'option') ):
+      $our_service_list_picture = get_sub_field('our_service_list_picture', 'option');
+      $our_service_list_name = get_sub_field('our_service_list_name', 'option');
+      $our_service_list_descr = get_sub_field('our_service_list_descr', 'option');
 
+          ?>
         <div class="our_team_items our_service_items">
           <div class="our_service_foto">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/icon2-mobile.png" alt="мобильные приложения">
+            <img src="<?php echo esc_url($our_service_list_picture[url]); ?>" alt="<?php echo esc_html($our_service_list_picture[alt]); ?>">
           </div>
-          <div class="our_service_title">Мобильность</div>
-          <div class="our_service_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-          </div>
-        </div>
-
-        <div class="our_team_items our_service_items">
-          <div class="our_service_foto">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/icon3-photo.png" alt="фотокамера">
-          </div>
-          <div class="our_service_title">Фотография</div>
-          <div class="our_service_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
+          <div class="our_service_title"><?php echo esc_html($our_service_list_name); ?></div>
+          <div class="our_service_deskr"> <?php echo esc_html($our_service_list_descr); ?>
           </div>
         </div>
-
-        <div class="our_team_items our_service_items">
-          <div class="our_service_foto">
-            <img src="<?php bloginfo('template_url'); ?>/assets/img/icon4-voice.png" alt="изучение рынка">
-          </div>
-          <div class="our_service_title">Маркетинг</div>
-          <div class="our_service_deskr"> Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Родного маленький напоивший рекламных имеет, букв.
-          </div>
-        </div>
+      <?php endwhile; ?>
 
       </div>
     </div>
@@ -142,24 +133,15 @@ get_header();
    <h2 class="block_title">Наши клиенты</h2>
    <div class="row">
     <div class="our_clients_wrap">
+       <?php while( has_sub_field('trade_mark', 'option') ):
+          $trade_mark_banner = get_sub_field('trade_mark_banner', 'option');
+          ?>
+      <div class="our_clients_items">
+        <img class="img-responsive" src="<?php echo esc_url($trade_mark_banner[url]); ?>" alt="<?php echo esc_html($trade_mark_banner[alt]); ?>">
+      </div>
+  <?php endwhile; ?>
 
-      <div class="our_clients_items">
-        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/clients/clients-1.png" alt="фотография клиента">
-      </div>
 
-      <div class="our_clients_items">
-        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/clients/clients-2.png" alt="фотография клиента">
-      </div>
-      <div class="our_clients_items">
-        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/clients/clients-3.png" alt="фотография клиента">
-      </div>
-
-      <div class="our_clients_items">
-        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/clients/clients-4.png" alt="фотография клиента">
-      </div>
-      <div class="our_clients_items">
-        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/img/clients/clients-5.png" alt="фотография клиента">
-      </div>
 
     </div>
   </div>
