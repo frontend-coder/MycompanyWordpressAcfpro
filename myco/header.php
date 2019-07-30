@@ -84,10 +84,13 @@
 						$header_logo = get_field('header_logo', 'option');
 						if($header_logo) :
 							?>
-							<h3><?php echo esc_html($header_logo); ?></h3>
+							<h3>
+ <a href="<?php echo home_url('/'); ?>">
+			<?php echo esc_html($header_logo); ?>
+</a>
+							</h3>
 						<?php endif; ?>
 					</div>
-
 <?php
 			wp_nav_menu( array(
 				// [ 'items_wrap' => '%3$s' ],
